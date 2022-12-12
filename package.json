@@ -1,0 +1,22 @@
+{
+  "name": "new-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.28.1"
+  },
+  "pagelist": [
+    "https://deep-space.blue/testing/for-playwright-test/01.html",
+    "https://deep-space.blue/testing/for-playwright-test/02.html",
+    "https://deep-space.blue/testing/for-playwright-test/03.html",
+    "https://deep-space.blue/testing/for-playwright-test/04.html",
+    "https://deep-space.blue/testing/for-playwright-test/05.html"
+  ]
+}
