@@ -9,6 +9,11 @@ const pagelist = fs.readFileSync(pagelistFilePath, 'utf-8')
     .map(line => line.trim()) // 各行の空白を削除
     .filter(line => line.length > 0); // 空行を除去
 
+const ignoredMessages = [
+    "Migrate is installed", // このログメッセージは無視します。
+    // 他の無視されるメッセージはここに追加します。
+];
+
 test.use({
     viewport: { width: 1400, height: 800 },
     deviceScaleFactor: 1,
@@ -27,10 +32,10 @@ test.describe('multiple pages test', () => {
                 if (msg.type() === "error") {
                     errors.push(msg.text());
                 }
-                if (msg.type() === "log") {
-                    if (!msg.text().match(/Migrate is installed/)) {
-                        logs.push(msg.text());
-                    }
+
+                // 無視されるメッセージリストに現在のメッセージが存在しない場合にのみ、ログに追加します。
+                if (msg.type() === "log" && !ignoredMessages.some(ignoredMessage => msg.text().includes(ignoredMessage))) {
+                    logs.push(msg.text());
                 }
             });
 

@@ -44,5 +44,9 @@ npm run test
 5 passed (14.9s)
 ```
 
+## 無視したいconsole.logがあるとき
+- WordPressが出力する `JQMIGRATE: Migrate is installed` のlogは無視する設定にしてあります。
+- 追加で無視したいconsole.logがあるときは tests/test.spec.jsの `const ignoredMessages = []` に追加してください。
+
 # 備考
 このテストでは、ページを開いた瞬間に表示されるconsole.logまたはconsole.errorのみ取得しています。
