@@ -19,7 +19,7 @@ var config = {
     trace: 'on-first-retry',
     locale: 'ja-JP',  // ブラウザのロケールを日本語に設定します
     launchOptions: {
-      slowMo: 500,  // ブラウザ操作を遅延させる時間(ミリ秒)
+      slowMo: 1000,  // ブラウザ操作を遅延させる時間(ミリ秒)
     },
   },
   projects: [
