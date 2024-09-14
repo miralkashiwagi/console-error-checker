@@ -8,16 +8,14 @@ npm install
 
 ## ページリスト作成
 
-package.jsonのpagelistにテストしたいURLを記入
+pagelist.txtにテストしたいURLを入力
 
-```json
-"pagelist": [
-    "https://deep-space.blue/testing/for-playwright-test/01.html",
-    "https://deep-space.blue/testing/for-playwright-test/02.html",
-    "https://deep-space.blue/testing/for-playwright-test/03.html",
-    "https://deep-space.blue/testing/for-playwright-test/04.html",
-    "https://deep-space.blue/testing/for-playwright-test/05.html"
-],
+```txt
+https://deep-space.blue/testing/for-playwright-test/01.html
+https://deep-space.blue/testing/for-playwright-test/02.html
+https://deep-space.blue/testing/for-playwright-test/03.html
+https://deep-space.blue/testing/for-playwright-test/04.html
+https://deep-space.blue/testing/for-playwright-test/05.html
 ```
 
 ## テスト実施

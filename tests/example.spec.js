@@ -1,7 +1,13 @@
 const { test, expect } = require('@playwright/test');
-const p = require("../package.json");
+const fs = require('fs');
+const path = require('path');
 
-var pagelist = p.pagelist;
+// テキストファイルからページリストを読み込む
+const pagelistFilePath = path.join(__dirname, '../pagelist.txt');
+const pagelist = fs.readFileSync(pagelistFilePath, 'utf-8')
+    .split('\n')  // 改行で分割
+    .map(line => line.trim()) // 各行の空白を削除
+    .filter(line => line.length > 0); // 空行を除去
 
 test.use({
     viewport: { width: 1400, height: 800 },
@@ -42,7 +48,7 @@ ${errors.map(e => `  - ${e}`).join('\n')}
 `.trim();
 
                 test.info().annotations.push({
-                    type: 'error', // エラー用のアノテーション
+                    type: 'error',
                     description: errorReport
                 });
             }
@@ -54,7 +60,7 @@ ${logs.map(l => `  - ${l}`).join('\n')}
 `.trim();
 
                 test.info().annotations.push({
-                    type: 'log', // ログ用のアノテーション
+                    type: 'log',
                     description: logReport
                 });
             }
